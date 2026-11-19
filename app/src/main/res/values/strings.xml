@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KasMate</string>
+    <string name="title_activity_main">KasMate</string>
+    <string name="package_name">com.kasmate.app</string>
+    <string name="custom_url_scheme">com.kasmate.app</string>
+</resources>
