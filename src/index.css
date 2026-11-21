@@ -1,0 +1,572 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    :root {
+        color-scheme: light;
+        --kas-red: #e31e24;
+        --kas-deep-red: #b5121b;
+        --kas-soft-red: #ff6b70;
+        --kas-bg-start: #f7f8fa;
+        --kas-bg-mid: #fff7f5;
+        --kas-surface: #ffffff;
+        --kas-on-surface: #171717;
+        --kas-on-surface-variant: #858585;
+        --kas-outline: #eeeef0;
+        --kas-tertiary: #b5121b;
+        --kas-secondary: #168a62;
+    }
+
+    .dark {
+        color-scheme: dark;
+        --kas-bg-start: #111216;
+        --kas-bg-mid: #1b1316;
+        --kas-surface: #191a20;
+        --kas-on-surface: #f4f4f5;
+        --kas-on-surface-variant: #b3b3ba;
+        --kas-outline: #34353c;
+        --kas-tertiary: #ff8a80;
+        --kas-secondary: #81c784;
+    }
+
+    html,
+    body,
+    button,
+    input,
+    textarea {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background-color: var(--kas-bg-start);
+        background-image:
+            radial-gradient(82% 58% at 96% 0%,
+                rgba(227, 30, 36, 0.24) 0%,
+                rgba(255, 107, 112, 0.13) 38%,
+                rgba(255, 107, 112, 0.03) 64%,
+                transparent 84%),
+            radial-gradient(60% 45% at 10% 100%,
+                rgba(227, 30, 36, 0.05) 0%,
+                transparent 75%);
+        background-attachment: fixed;
+        color: var(--kas-on-surface);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .dark body {
+        background-color: #111216;
+        background-image:
+            radial-gradient(82% 58% at 96% 0%,
+                rgba(227, 30, 36, 0.26) 0%,
+                rgba(181, 18, 27, 0.12) 40%,
+                rgba(181, 18, 27, 0.03) 68%,
+                transparent 85%),
+            radial-gradient(55% 40% at 10% 100%,
+                rgba(227, 30, 36, 0.06) 0%,
+                transparent 75%);
+    }
+
+    input::-ms-reveal,
+    input::-ms-clear {
+        display: none !important;
+        width: 0;
+        height: 0;
+    }
+
+    input::-webkit-credentials-auto-fill-button,
+    input::-webkit-contacts-auto-fill-button {
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.kas-gradient {
+    background: linear-gradient(135deg, #b5121b 0%, #e31e24 55%, #ff6b70 100%);
+}
+
+.kas-card {
+    background-color: var(--kas-surface);
+    border: 1px solid var(--kas-outline);
+    border-radius: 24px;
+}
+
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
+
+@keyframes mascotFloat {
+
+    0%,
+    100% {
+        transform: translateY(-4px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes mascotBob {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(-0.8deg);
+    }
+
+    50% {
+        transform: translateY(3px) rotate(0.8deg);
+    }
+}
+
+@keyframes mascotExcited {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(-2.5deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2.5deg) scale(1.03);
+    }
+}
+
+@keyframes angryShake {
+
+    0%,
+    100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    20% {
+        transform: translateX(-2.5px) rotate(-2deg);
+    }
+
+    40% {
+        transform: translateX(2.5px) rotate(2deg);
+    }
+
+    60% {
+        transform: translateX(-2px) rotate(-1.5deg);
+    }
+
+    80% {
+        transform: translateX(2px) rotate(1.5deg);
+    }
+}
+
+@keyframes coinToss1 {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 24px) scale(0.6) rotateY(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(-18px, -32px) scale(1.08) rotateY(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-26px, 12px) scale(0.75) rotateY(720deg);
+    }
+}
+
+@keyframes coinToss2 {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 26px) scale(0.6) rotateY(0deg);
+    }
+
+    22% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(4px, -42px) scale(1.12) rotateY(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(8px, 10px) scale(0.75) rotateY(720deg);
+    }
+}
+
+@keyframes coinToss3 {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 24px) scale(0.6) rotateY(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+        transform: translate(22px, -30px) scale(1.05) rotateY(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(30px, 12px) scale(0.75) rotateY(720deg);
+    }
+}
+
+@keyframes steamRise {
+    0% {
+        opacity: 0;
+        transform: translateY(4px) scale(0.7);
+    }
+
+    40% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-14px) scale(1.15);
+    }
+}
+
+@keyframes sparkleTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.75) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15) rotate(18deg);
+    }
+}
+
+@keyframes welcomeImageReveal {
+    0% {
+        opacity: 0;
+        transform: scale(1.07) translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+    }
+}
+
+@keyframes welcomeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes welcomeExitHero {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-22px) scale(1.04);
+    }
+}
+
+@keyframes welcomeExitContent {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+}
+
+.animate-mascot-float {
+    animation: mascotFloat 2.6s ease-in-out infinite;
+}
+
+.animate-mascot-bob {
+    animation: mascotBob 2.1s ease-in-out infinite;
+}
+
+.animate-mascot-excited {
+    animation: mascotExcited 0.55s ease-in-out infinite;
+}
+
+.animate-angry-shake {
+    animation: angryShake 1.3s ease-in-out infinite;
+}
+
+.animate-coin-toss-1 {
+    animation: coinToss1 1.45s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-coin-toss-2 {
+    animation: coinToss2 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.28s infinite;
+}
+
+.animate-coin-toss-3 {
+    animation: coinToss3 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.52s infinite;
+}
+
+.animate-steam-rise {
+    animation: steamRise 1.4s ease-out infinite;
+}
+
+.animate-sparkle-twinkle {
+    animation: sparkleTwinkle 1.6s ease-in-out infinite;
+}
+
+.animate-welcome-image {
+    animation: welcomeImageReveal 0.78s cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+}
+
+.animate-welcome-up {
+    animation: welcomeSlideUp 0.62s cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+}
+
+.animate-welcome-exit-hero {
+    animation: welcomeExitHero 0.44s cubic-bezier(0.32, 0, 0.24, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.animate-welcome-exit-content {
+    animation: welcomeExitContent 0.38s cubic-bezier(0.32, 0, 0.24, 1) forwards;
+    will-change: transform, opacity;
+}
+
+.ios-spring {
+    transition-timing-function: cubic-bezier(0.28, 1.24, 0.42, 1);
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.99);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pageSlideRight {
+    from {
+        opacity: 0;
+        transform: translateX(24px) scale(0.988);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pageSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-24px) scale(0.988);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes navPop {
+    0% {
+        transform: translateY(0px) scale(0.92);
+    }
+
+    55% {
+        transform: translateY(-7px) scale(1.22);
+    }
+
+    100% {
+        transform: translateY(-5px) scale(1.16);
+    }
+}
+
+@keyframes navDockEnter {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes shimmerSlide {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes authEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes robotBlink {
+
+    0%,
+    92%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    96% {
+        transform: scaleY(0.12);
+    }
+}
+
+@keyframes bubblePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.84) translateY(6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+    }
+}
+
+@keyframes successPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+    }
+}
+
+.animate-page-enter {
+    animation: pageFadeIn 0.36s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.animate-page-forward {
+    animation: pageSlideRight 0.38s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.animate-page-backward {
+    animation: pageSlideLeft 0.38s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.animate-nav-pop {
+    animation: navPop 0.42s cubic-bezier(0.28, 1.28, 0.42, 1) forwards;
+    will-change: transform;
+}
+
+.animate-nav-dock {
+    animation: navDockEnter 0.52s cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(90deg,
+            rgba(227, 30, 36, 0.05) 0%,
+            rgba(255, 255, 255, 0.85) 50%,
+            rgba(227, 30, 36, 0.05) 100%);
+    background-color: #eceef2;
+    background-size: 200% 100%;
+    animation: shimmerSlide 1.35s ease-in-out infinite;
+}
+
+.dark .skeleton-shimmer {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-color: #24252c;
+    background-size: 200% 100%;
+}
+
+.animate-auth-enter {
+    animation: authEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    will-change: transform, opacity;
+}
+
+.animate-robot-blink {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: robotBlink 4.2s ease-in-out infinite;
+}
+
+.animate-bubble-pop {
+    animation: bubblePop 0.36s cubic-bezier(0.28, 1.24, 0.42, 1) both;
+}
+
+.animate-success-pop {
+    animation: successPop 0.42s cubic-bezier(0.28, 1.24, 0.42, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .animate-mascot-float,
+    .animate-mascot-bob,
+    .animate-mascot-excited,
+    .animate-angry-shake,
+    .animate-coin-toss-1,
+    .animate-coin-toss-2,
+    .animate-coin-toss-3,
+    .animate-steam-rise,
+    .animate-sparkle-twinkle,
+    .animate-welcome-image,
+    .animate-welcome-up,
+    .animate-welcome-exit-hero,
+    .animate-welcome-exit-content,
+    .animate-page-enter,
+    .animate-page-forward,
+    .animate-page-backward,
+    .animate-nav-pop,
+    .animate-nav-dock,
+    .skeleton-shimmer,
+    .animate-auth-enter,
+    .animate-robot-blink,
+    .animate-bubble-pop,
+    .animate-success-pop {
+        animation: none;
+    }
+}

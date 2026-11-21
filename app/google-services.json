@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "690834599650",
+    "project_id": "kasmatenotif",
+    "storage_bucket": "kasmatenotif.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690834599650:android:89e815ad0868276f5d78bb",
+        "android_client_info": {
+          "package_name": "com.kasmate.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKx8Ro1Slm2Cioht5hL5WV6e32s9VGmtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690834599650:android:c66419308486c44c5d78bb",
+        "android_client_info": {
+          "package_name": "com.smktel.kasmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKx8Ro1Slm2Cioht5hL5WV6e32s9VGmtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

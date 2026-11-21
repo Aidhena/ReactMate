@@ -24,6 +24,15 @@ allprojects {
     }
 }
 
+subprojects { project ->
+    project.afterEvaluate {
+        def androidExtension = project.extensions.findByName('android')
+        if (androidExtension != null) {
+            androidExtension.buildToolsVersion = rootProject.ext.buildToolsVersion
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

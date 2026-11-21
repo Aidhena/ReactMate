@@ -4,4 +4,6 @@
     <string name="title_activity_main">KasMate</string>
     <string name="package_name">com.kasmate.app</string>
     <string name="custom_url_scheme">com.kasmate.app</string>
+    <string name="push_notification_channel_id">kasmate_desktop_notifications</string>
+    <string name="push_notification_channel_name">KasMate notifications</string>
 </resources>
